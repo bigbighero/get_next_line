@@ -1,6 +1,7 @@
 # get_next_line
-Write a function that returns a line read from a file descriptor
-# libft
+
+Reading a line from a fd is way too tedious
+
 Function name:	get_next_line
 
 Prototype:		char *get_next_line(int fd);
@@ -14,7 +15,7 @@ Return value: 		Read line: correct behavior
 
 External functs.	read, malloc, free
 
-Description: Write your own library: a collection of functions that will be a useful tool for your cursus.
+Description: 		Write a function that returns a line read from a file descriptor
 
 42 Sao Paulo
 
