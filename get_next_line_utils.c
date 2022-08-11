@@ -6,7 +6,7 @@
 /*   By: roferrei <roferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 00:45:30 by roferrei          #+#    #+#             */
-/*   Updated: 2022/08/09 00:44:49 by roferrei         ###   ########.fr       */
+/*   Updated: 2022/08/12 00:04:38 by roferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,6 @@ char	*ft_strdup(const char *s)
 	}
 	point[i] = '\0';
 	return (point);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*str;
-
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < start + 1)
-		return (ft_strdup(""));
-	if (ft_strlen(&s[start]) < len)
-		len = ft_strlen(&s[start]);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
 }
 
 char	*ft_strchr(const char *s, int c)
