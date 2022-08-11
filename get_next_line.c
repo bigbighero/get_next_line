@@ -33,7 +33,7 @@ static char* read_txt (char *rest, int fd)
 
 static char get_line(char *rest)
 {
-	
+
 }
 
 char	*get_next_line(int fd)
