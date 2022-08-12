@@ -6,7 +6,7 @@
 /*   By: roferrei <roferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 01:00:04 by roferrei          #+#    #+#             */
-/*   Updated: 2022/08/12 17:36:31 by roferrei         ###   ########.fr       */
+/*   Updated: 2022/08/12 17:39:28 by roferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*read_txt(char *rest, int fd)
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	while (ft_strchr(rest, '\n') == NULL)
 	{
-		text_read = read(fd, buffer, BUFFER_SIZE); //testar se fd é arbitrário ou inexistente e retornar NULL
+		text_read = read(fd, buffer, BUFFER_SIZE);
 		if (text_read == 0)
 			break ;
 		buffer[text_read] = '\0';
