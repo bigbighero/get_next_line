@@ -6,7 +6,7 @@
 /*   By: roferrei <roferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 01:00:04 by roferrei          #+#    #+#             */
-/*   Updated: 2022/08/12 01:05:48 by roferrei         ###   ########.fr       */
+/*   Updated: 2022/08/12 02:54:15 by roferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ static char	*read_txt(char *rest, int fd)
 	return (rest);
 }
 
+static void	save_me(char **rest)
+{
+	if (**rest == '\0')
+	{
+		free(*rest);
+		*rest = NULL;
+	}
+}
+
 static char	*get_line(char **rest)
 {
 	char	*i;
@@ -57,6 +66,7 @@ static char	*get_line(char **rest)
 	char	*aux;
 
 	i = ft_strchr(*rest, '\n');
+	save_me(rest);
 	if (i == NULL)
 	{
 		temp = *rest;
@@ -86,11 +96,3 @@ char	*get_next_line(int fd)
 	line = get_line(&rest);
 	return (line);
 }
-
-// int main ()
-// {
-// 	int fd;
-// 	fd = open("teste.txt", O_RDONLY);
-// 	printf ("%s", get_next_line(fd));
-// 	return (0);
-// }
