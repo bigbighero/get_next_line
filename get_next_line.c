@@ -6,7 +6,7 @@
 /*   By: roferrei <roferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 01:00:04 by roferrei          #+#    #+#             */
-/*   Updated: 2022/08/12 17:39:28 by roferrei         ###   ########.fr       */
+/*   Updated: 2022/08/13 00:52:23 by roferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0) //verificar fd não existir, retornar NULL / testar se fd é arbitrário ou inexistente e retornar NULL
-		return (0);
+		return (NULL);
 	if (rest == NULL)
 		rest = ft_strdup("");
 	rest = read_txt(rest, fd);
