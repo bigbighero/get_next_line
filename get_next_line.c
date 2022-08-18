@@ -6,13 +6,13 @@
 /*   By: roferrei <roferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 01:00:04 by roferrei          #+#    #+#             */
-/*   Updated: 2022/08/13 00:52:23 by roferrei         ###   ########.fr       */
+/*   Updated: 2022/08/16 02:25:06 by roferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len) //Vai criar uma nova string do ponto start até o tamanho len da palavra
 {
 	char	*str;
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-static char	*read_txt(char *rest, int fd)
+static char	*read_txt(char *rest, int fd) // vai fazer a leitura do arquivo de texto e salvando dentro da variável rest
 {
 	char	*buffer;
 	size_t	text_read;
@@ -50,7 +50,7 @@ static char	*read_txt(char *rest, int fd)
 	return (rest);
 }
 
-static void	save_me(char **rest)
+static void	save_me(char **rest) // função utilizada apenas para limpar o que está na estática rest na execução do get_line
 {
 	if (**rest == '\0')
 	{
@@ -59,7 +59,7 @@ static void	save_me(char **rest)
 	}
 }
 
-static char	*get_line(char **rest)
+static char	*get_line(char **rest) 
 {
 	char	*i;
 	char	*temp;
