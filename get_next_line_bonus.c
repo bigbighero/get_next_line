@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 static char	*read_txt(char *rest, int fd)
 {
 	char	*buffer;
-	ssize_t	text_read;
+	int	text_read;
 	char	*aux;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
@@ -90,7 +90,7 @@ char	*get_next_line(int fd)
 	static char	*rest[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0) //verificar fd não existir, retornar NULL / testar se fd é arbitrário ou inexistente e retornar NULL
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0) //verificar fd não existir, retornar NULL / testar se fd é arbitrário ou inexistente e retornar NULL
 		return (0);
 	if (rest[fd] == NULL)
 		rest[fd] = ft_strdup("");
