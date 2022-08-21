@@ -87,7 +87,7 @@ static char	*get_line(char **rest)
 
 char	*get_next_line(int fd)
 {
-	static char	*rest[1024];
+	static char	*rest[1024]; // vetor com a quantidade de arquivos que posso trabalhar.
 	char		*line;
 
 	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0) //verificar fd não existir, retornar NULL / testar se fd é arbitrário ou inexistente e retornar NULL
